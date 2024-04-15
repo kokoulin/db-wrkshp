@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  service-db:
+    build: ./
+    container_name: pdldk
+    environment:
+      POSTGRES_DB: pdldk
+      POSTGRES_USER: pdldk
+      POSTGRES_PASSWORD: pdldk
+    ports:
+      - "65432:5432"
+    volumes:
+      - ./data:/data
+    restart: unless-stopped
+
+
+volumes:
+  db-data:
